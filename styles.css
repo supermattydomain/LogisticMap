@@ -9,7 +9,14 @@ body {
 }
 
 #bifurc {
+	width: 100%;
+	height: 100%;
+}
+
+.resizable {
 	width: 80%;
 	height: 80%;
+	float: left; /* trigger shrinkwrap */
+	padding: 10px;
 	border: 1px solid black;
 }

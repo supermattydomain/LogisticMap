@@ -26,8 +26,16 @@
 	}
 	$(function() {
 		var bifurc = $('#bifurc');
+		var resizable = $('.resizable');
 		bifurc.attr({width: bifurc.width(), height: bifurc.height()});
 		var zoom = 1;
+		resizable.resizable({ handles: "all", animate: false, ghost: true, autohide: false, aspectRatio: false });
+        resizable.on('resizestop', function(event, ui) {
+                bifurc.css({ width: '100%', height: '100%' });
+                bifurc[0].width = bifurc.width();
+                bifurc[0].height = bifurc.height();
+        		drawBifurcationDiagram(bifurc, zoom);
+        });
 		drawBifurcationDiagram(bifurc, zoom);
 	});
 })(jQuery);
