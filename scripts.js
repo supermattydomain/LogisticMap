@@ -18,7 +18,7 @@
 		var imageData = ctx.getImageData(0, 0, bifurc.width(), bifurc.height());
 		var rmin = 2.4, rmax = 4;
 		var x;
-		for (x = 1; x < bifurc.width(); x++) {
+		for (x = 0; x < bifurc.width(); x++) {
 			var r = rmin + (rmax - rmin) * (x / bifurc.width());
 			plot(imageData, x, r);
 		}
