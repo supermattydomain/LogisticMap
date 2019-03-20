@@ -9,7 +9,7 @@
 		// Now plot some points
 		for (i = 0; i < imageData.height; i++) {
 			var y = p * (imageData.height);
-			setPixel(imageData, x, y, 0, 0, 0, 255);
+			setPixel(imageData, x, imageData.height - y, 0, 0, 0, 255);
 			p = r * p * (1 - p);
 		}
 	}
@@ -31,10 +31,10 @@
 		var zoom = 1;
 		resizable.resizable({ handles: "all", animate: false, ghost: true, autohide: false, aspectRatio: false });
         resizable.on('resizestop', function(event, ui) {
-                bifurc.css({ width: '100%', height: '100%' });
-                bifurc[0].width = bifurc.width();
-                bifurc[0].height = bifurc.height();
-        		drawBifurcationDiagram(bifurc, zoom);
+        	bifurc.css({ width: '100%', height: '100%' });
+        	bifurc[0].width = bifurc.width();
+        	bifurc[0].height = bifurc.height();
+        	drawBifurcationDiagram(bifurc, zoom);
         });
 		drawBifurcationDiagram(bifurc, zoom);
 	});
